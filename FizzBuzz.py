@@ -1,18 +1,21 @@
-"""
 Q1. Why is the report method untestable ? [2 pts]
+Ans:
+- report() method is instantiating collaborators like write,close,etc.
+- have external dependency.
 
 
+"""
 
-
+"""
 Q2. How will you change the api of the report method to make it more testable ? [2 pts]
-
-
+Ans:
+    def report(self, numbers,fileHandler):
 
 """
 class FizzBuzz(object):
-    def report(self, numbers):
+    def report(self, numbers,fileHandler=open):
 
-        report_file = open('c:/temp/fizzbuzz_report.txt', 'w')
+        report_file = fileHandler('c:/temp/fizzbuzz_report.txt', 'w')
 
         for number in numbers:
             msg = str(number) + " "
@@ -32,5 +35,3 @@ class FizzBuzz(object):
 if "__main__" == __name__:
     fb = FizzBuzz()
     fb.report(range(100))
-
-            
