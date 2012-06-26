@@ -64,6 +64,7 @@ class TestFizzBuzzStubbed(unittest.TestCase):
         my_stub = MyStub()
         filehandler = my_stub.gen_open_stub(my_stub)
         self.fb.report(numbers,filehandler)
+        self.assertEqual(numbers[0], '3 fizz \n')
         
     def test_report_for_empty_list(self):
          print "test_report"
