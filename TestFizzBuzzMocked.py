@@ -21,7 +21,7 @@ class TestFizzBuzzMocked(pymock.PyMockTestCase):
         #Create mock
         fileHandlerWrapperMock = self.mock()
         #Set expectations
-        self.expectAndReturn()
+        self.expectAndReturn(fileHandlerWrapperMock.open('c:/temp/fizzbuzz_report.txt'),'w')
         numbers = ['1','2','3','4']
         fileHandlerWrapperMock.write(numbers)
         fileHandlerWrapperMock.close()
